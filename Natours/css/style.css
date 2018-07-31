@@ -218,7 +218,6 @@ body {
   position: relative;
   height: 52rem; }
   .card__side {
-    font-size: 2rem;
     height: 52rem;
     transition: all .8s ease;
     position: absolute;
