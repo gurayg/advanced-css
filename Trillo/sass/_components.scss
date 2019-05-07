@@ -13,9 +13,9 @@
   align-items: center;
   justify-content: center;
 
-  @media only screen and (max-width:$bp-smallest){
-    order:1;
-    flex:0 0 100%;
+  @media only screen and (max-width: $bp-smallest) {
+    order: 1;
+    flex: 0 0 100%;
     background-color: var(--color-grey-light-2);
 
   }
@@ -267,9 +267,10 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
     @media only screen and (max-width: $bp-small) {
-font-size: 1.8rem;
-padding: 1.25rem 2rem;
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
     }
 
   }
@@ -318,14 +319,16 @@ padding: 1.25rem 2rem;
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -3px;
+
     @media only screen and (max-width: $bp-small) {
-font-size: 1.8rem;
+      font-size: 1.8rem;
     }
   }
 
   &__rating-count {
     font-size: .8rem;
     text-transform: uppercase;
+
     @media only screen and (max-width: $bp-small) {
       font-size: 0.5rem;
     }
@@ -416,16 +419,20 @@ font-size: 1.8rem;
     height: 1rem;
     width: 1rem;
     margin-right: .7rem;
+
     //older browsers
-    //background-image: url(../img/chevron-thin-right.svg) ;
-    //background-size: cover;
+    background-image: url(../img/chevron-thin-right.svg);
+    background-size: cover;
 
     //newer browsers - masks
-    background-color: var(--color-primary);
-    -webkit-mask-image: url(../img/chevron-thin-right.svg);
-    -webkit-mask-size: cover;
-    mask-image: url(../img/chevron-thin-right.svg);
-    mask-size: cover;
+    @supports(-webkit-mask-image: url()) or (mask-image: url()) {
+      background-color: var(--color-primary);
+      -webkit-mask-image: url(../img/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      mask-image: url(../img/chevron-thin-right.svg);
+      mask-size: cover;
+      background-image: none;
+    }
   }
 }
 
